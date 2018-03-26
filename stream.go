@@ -36,16 +36,7 @@ func plus1s(w http.ResponseWriter, r *http.Request) {
 			write(w,"You've waste too much time, we have to stop you.")
 			return
 		}
-<<<<<<< HEAD
 		write(w,frames[i])
-=======
-		b, err := ioutil.ReadFile("pic/"+leftPad2Len(strconv.Itoa(i)  , "0", 3) +".txt")
-		if err != nil {
-			fmt.Print(err)
-		}
-		str := string(b)
-		write(w,str)
->>>>>>> a3d5c788a96e6745418c402bbb467e02d1ff43aa
 		i=i+1
 	}
 }
@@ -54,11 +45,7 @@ func plus1s(w http.ResponseWriter, r *http.Request) {
 func write(w http.ResponseWriter,s string){
 	flusher, ok := w.(http.Flusher)
 	if !ok {
-<<<<<<< HEAD
 		panic("Expected http.ResponseWriter to be an http.CloseNotifier")
-=======
-        	panic("Expected http.ResponseWriter to be an http.CloseNotifier")
->>>>>>> a3d5c788a96e6745418c402bbb467e02d1ff43aa
 	}
 	fmt.Fprintf(w, s)
 	fmt.Fprintf(w, "\033[2J\033[H")
