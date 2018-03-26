@@ -28,8 +28,8 @@ func plus1s(w http.ResponseWriter, r *http.Request) {
 	i :=1
 	loop := 0
 	for{
-		if i==MAX_FRAME+1{
-			i=1
+		if i==MAX_FRAME{
+			i=0
 			loop=loop+1
 		}
 		if loop>20{
