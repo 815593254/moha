@@ -11,3 +11,4 @@ curl aoaoao.me:1926
 go build stream.go
 ./stream
 ```
+详细说明：https://aoaoao.me/1502.html
