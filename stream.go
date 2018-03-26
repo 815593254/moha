@@ -10,6 +10,9 @@ import (
 	"strconv"
 )
 
+const MAX_FRAME = 360
+var frames []string = make([]string, 0, MAX_FRAME)
+
 func leftPad2Len(s string, padStr string, overallLen int) string {
 	var padCountInt int
 	padCountInt = 1 + ((overallLen - len(padStr)) / len(padStr))
@@ -23,16 +26,26 @@ func plus1s(w http.ResponseWriter, r *http.Request) {
 		return 
 	}
 	i :=1
+	loop := 0
 	for{
-		if i==361{
+		if i==MAX_FRAME+1{
 			i=1
+			loop=loop+1
 		}
+		if loop>20{
+			write(w,"You've waste too much time, we have to stop you.")
+			return
+		}
+<<<<<<< HEAD
+		write(w,frames[i])
+=======
 		b, err := ioutil.ReadFile("pic/"+leftPad2Len(strconv.Itoa(i)  , "0", 3) +".txt")
 		if err != nil {
 			fmt.Print(err)
 		}
 		str := string(b)
 		write(w,str)
+>>>>>>> a3d5c788a96e6745418c402bbb467e02d1ff43aa
 		i=i+1
 	}
 }
@@ -41,15 +54,34 @@ func plus1s(w http.ResponseWriter, r *http.Request) {
 func write(w http.ResponseWriter,s string){
 	flusher, ok := w.(http.Flusher)
 	if !ok {
+<<<<<<< HEAD
+		panic("Expected http.ResponseWriter to be an http.CloseNotifier")
+=======
         	panic("Expected http.ResponseWriter to be an http.CloseNotifier")
+>>>>>>> a3d5c788a96e6745418c402bbb467e02d1ff43aa
 	}
 	fmt.Fprintf(w, s)
 	fmt.Fprintf(w, "\033[2J\033[H")
 	time.Sleep(100000000)
-		flusher.Flush()
+	flusher.Flush()
+}
+
+func prepare(){
+	fmt.Println("Prepare framses...")
+	for i:=0;i<MAX_FRAME;i=i+1{
+		b, err := ioutil.ReadFile("pic/"+leftPad2Len(strconv.Itoa(i+1)  , "0", 3) +".txt")
+		if err != nil {
+			fmt.Print(err)
+		}
+		str := string(b)
+		frames = append(frames,str);
+	}
+	fmt.Println("Framses are ready.")
 }
 
 func main() {
+	prepare();
+	fmt.Println("Ready to start server")
 	http.HandleFunc("/", plus1s)
 	err := http.ListenAndServe(":1926", nil)
 	if err != nil {
