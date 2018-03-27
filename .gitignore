@@ -1,0 +1,6 @@
+# go distribution
+stream.exe
+
+# nodejs dependences
+node_modules/*
+package-lock.json
