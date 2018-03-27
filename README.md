@@ -22,4 +22,11 @@ npm install
 node stream.js
 ```
 
+docker(go)
+
+```
+docker build -f Dockerfile-go -t plus1s:live .
+docker run -it -p 1926:1926 plus:live
+```
+
 详细说明：https://aoaoao.me/1502.html
