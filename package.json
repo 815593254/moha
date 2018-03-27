@@ -1,0 +1,25 @@
+{
+  "name": "plus1s.live",
+  "version": "0.0.1",
+  "description": "Your idle server can be used to plus 1s for the elder.",
+  "main": "stream.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HFO4/plus1s.live.git"
+  },
+  "keywords": [
+    "plus1s"
+  ],
+  "author": "master",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HFO4/plus1s.live/issues"
+  },
+  "homepage": "https://github.com/HFO4/plus1s.live#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
