@@ -1,4 +1,7 @@
 # plus1s.live
+
+![jike_1522104767403_pic.gif](https://download.aoaoao.me/jike_1522104767403_pic.gif)
+
 你的服务器除了用来挂SS外，还可以拿来续
 
 ### 使用方法
