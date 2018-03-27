@@ -26,7 +26,7 @@ docker(go)
 
 ```
 docker build -f Dockerfile-go -t plus1s:live .
-docker run -it -p 1926:1926 plus:live
+docker run -it -p 1926:1926 plus1s:live
 ```
 
 详细说明：https://aoaoao.me/1502.html
