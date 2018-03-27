@@ -54,7 +54,7 @@ func write(w http.ResponseWriter, s string) {
 }
 
 func prepare() {
-	fmt.Println("Prepare framses...")
+	fmt.Println("Prepare frames...")
 	for i := 0; i < MAX_FRAME; i++ {
 		b, err := ioutil.ReadFile("pic/" + leftPad2Len(strconv.Itoa(i+1), "0", 3) + ".txt")
 		if err != nil {
@@ -63,7 +63,7 @@ func prepare() {
 		str := string(b)
 		frames = append(frames, str)
 	}
-	fmt.Println("Framses are ready.")
+	fmt.Println("Frames are ready.")
 }
 
 func main() {
