@@ -25,6 +25,14 @@ npm install
 node stream.js
 ```
 
+python 
+
+```
+# support python2 and python3
+
+python stream.py
+```
+
 docker(go)
 
 ```
