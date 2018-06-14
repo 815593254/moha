@@ -1,3 +1,13 @@
+/*
+* Wroning!
+* 警告！
+* 暴力预警
+* 膜法预警
+* 非战斗人员迅速撤离
+*/
+
+
+
 const express = require("express");
 const fs = require("fs");
 
@@ -13,33 +23,6 @@ function plus1s(req, res, next) {
         'Access-Control-Allow-Origin':'*'});
     res.send(frames[i]);
     i++;
-
-    // if (!req.header("User-Agent").includes("curl")) {
-    //     res.redirect("https://github.com/HFO4/plus1s.live");
-    //     return;
-    // }
-    // res.writeHead(200, {
-    //     'Content-Type': 'text/plain; charset=utf-8',
-    //     'Transfer-Encoding': 'chunked',
-    //     'X-Content-Type-Options': 'nosniff',
-    //     'Access-Control-Allow-Origin':'*'});
-    // let i = 1;
-    // let loop = 0;
-    // var io = setInterval(function () {
-    //     if (i == MAX_FRAME) {
-    //         i = 0;
-    //         loop++;
-    //     }
-    //     write(res, frames[i]);
-    //     i++;
-    //     if (loop >= 20) {
-    //         res.end("\nYou've waste too much time, we have to stop you.\n");
-    //         clearInterval(io);
-    //     }
-    // }, 100);
-    // if (next) {
-    //     next();
-    // }
 }
 
 function write(res, str) {
