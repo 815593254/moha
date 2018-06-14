@@ -36,6 +36,11 @@ function index(req,res,next){
     res.sendFile(fileName);
 }
 
+function saobo(req,res,next){
+    fileName =  __dirname + '/src/saobo.html';
+    res.sendFile(fileName);
+}
+
 function prepare() {
     console.log("Prepare frames...");
     for (let i = 0; i < MAX_FRAME; i++) {
@@ -52,7 +57,8 @@ function main() {
     console.log("Ready to start server");
     let app = express();
     app.use('/moha', plus1s);
-    app.use('/', index)
+    app.use('/', index);
+    app.use('/saobo',saobo);
     app.listen(1926).on('error', console.log);
 }
 
